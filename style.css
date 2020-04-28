@@ -23,12 +23,16 @@ body{
 }
 header{
     display: flex;
-    padding: var(--padding-small) var(--padding-big);
+    padding: 0 var(--padding-big);
     justify-content: space-between;
-    align-items: center;
+    height:83px;
+    box-sizing: border-box;
 }
-
+header .menu {
+    z-index: 10;
+}
 header .main-logo{
+    align-self: center;
     display: inline-block;
     width:114px;
     height:53px;
@@ -37,16 +41,19 @@ header .main-logo{
 
 header .menu-list{
     display: flex;
+    overflow: hidden;
 }
 header .side-menu-list{
     display: flex;
     font-size:14px;
     width:300px;
     justify-content: space-between;
+    align-self: center;
 }
 header .menu-list > li{
     margin:0 var(--padding-middle);
     font-size:18px;
+    line-height: 83px;
 }
 header .menu-list > li a{
     padding:var(--padding-small) 0;
@@ -65,11 +72,45 @@ header .side-menu-list > li :hover{
     text-decoration-line: underline;
 }
 .sub-list{
-    display: none;
+    font-size: 14px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    height:0;
+    color:var(--white-color);
+    font-weight: bold;
+    padding-top: 15px;
+}
+.sub-list{
+    line-height: 2.3em;
+}
+.sub-list.mouseover{
+    height:230px;
+    transition : height .5s;
 }
 .main-view{
     margin:0 var(--padding-big);
     width:100%;
     height:690px;
     background: url(http://www.hansolhomedeco.co.kr/img/main/bg_main03.jpg) no-repeat 0 0;
+}
+.dropdown-list{
+    position: absolute;
+    top:83px;
+    left:0;
+    background-color: rgba(45, 91, 121, 0.9);
+    width:100%;
+    height:0;
+    transition : height 0.5s;
+}
+
+.dropdown-list.mouseover{
+    height:230px;
+    transition: height 0.5s; 
+}
+.dropdown-list:hover{
+    height:230px;
+    transition: height 0.5s; 
 }
